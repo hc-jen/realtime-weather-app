@@ -52,8 +52,19 @@ const fetchWeatherForecast = ({ authorizationKey, cityName }) => {
 };
 
 const fetchSunriseAndSunsetData = ({ authorizationKey, sunriseCityName}) => {
+  const now = new Date();
+
+  const nowDate = Intl.DateTimeFormat("zh-TW", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .format(now)
+    .replace(/\//g, "-");
+
+
   return fetch(
-    `https://opendata.cwb.gov.tw/api/v1/rest/datastore/A-B0062-001?Authorization=${authorizationKey}`
+    `https://opendata.cwb.gov.tw/api/v1/rest/datastore/A-B0062-001?Authorization=${authorizationKey}&timeFrom=${nowDate}`
   )
     .then((response) => response.json())
     .then((data) => {
