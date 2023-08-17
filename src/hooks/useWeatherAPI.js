@@ -1,5 +1,5 @@
 import React from 'react'
-import { getMoment } from './../utils/helpers';
+import { getMoment, getSunRiseSetTime } from './../utils/helpers';
 
 const fetchCurrentWeather = ({ authorizationKey, locationName }) => {
   return fetch(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=${authorizationKey}&locationName=${locationName}`)
@@ -69,8 +69,12 @@ const fetchSunriseAndSunsetData = ({ authorizationKey, sunriseCityName}) => {
     .then((response) => response.json())
     .then((data) => {
       const sunriseAndSunsetData = data.records.locations.location;
+      console.log("sunriseAndSunsetData",sunriseAndSunsetData)
       const currentMoment = getMoment(sunriseCityName, sunriseAndSunsetData);
+      const sunRiseSetTimestamp = getSunRiseSetTime(sunriseCityName, sunriseAndSunsetData);
+      console.log(sunRiseSetTimestamp)
       return {
+        ...sunRiseSetTimestamp,
         moment: currentMoment
       };
     })
@@ -90,6 +94,8 @@ export default function useWeatherAPI({ locationName, cityName, sunriseCityName,
     comfortability: '',
     moment:'day',
     isLoading: true,
+    sunriseTimestamp: '05:00',
+    sunsetTimestamp: '17:00'
   });
 
 

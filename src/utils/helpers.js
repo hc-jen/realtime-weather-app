@@ -143,3 +143,33 @@ export const availableLocations = [
 export const findLocation = (cityName) => {
   return availableLocations.find((location) => location.cityName === cityName);
 };
+
+export const getSunRiseSetTime = (locationName, sunriseAndSunsetData) => {
+  const location = sunriseAndSunsetData.find(
+    (data) => data.CountyName === locationName
+  );
+  if (!location) {
+    throw new Error(`找不到 ${location} 的日出日落資料`);
+  }
+  const now = new Date();
+
+  const nowDate = Intl.DateTimeFormat("zh-TW", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .format(now)
+    .replace(/\//g, "-");
+
+  const locationDate = location?.time.find((time) => time.Date === nowDate);
+  if (!locationDate) {
+    throw new Error(`找不到 ${locationName} 在 ${nowDate} 的日出日落資料`);
+  }
+
+  const sunriseTimestamp = locationDate.SunRiseTime;
+  const sunsetTimestamp = locationDate.SunSetTime;
+
+  return {sunriseTimestamp, 
+    sunsetTimestamp
+    };
+};
