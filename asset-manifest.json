@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/realtime-weather-app/static/css/main.2625b889.css",
-    "main.js": "/realtime-weather-app/static/js/main.8909cca7.js",
+    "main.js": "/realtime-weather-app/static/js/main.52f19951.js",
     "static/js/988.acb92799.chunk.js": "/realtime-weather-app/static/js/988.acb92799.chunk.js",
     "static/media/day-snowing.svg": "/realtime-weather-app/static/media/day-snowing.c46361c3c4c6be9ac89ece97659afc9e.svg",
     "static/media/night-snowing.svg": "/realtime-weather-app/static/media/night-snowing.015dc2c775ca88768d854e662eb223eb.svg",
@@ -24,11 +24,11 @@
     "static/media/loading.svg": "/realtime-weather-app/static/media/loading.665f7c0d37c65c48d153750153e7b3f8.svg",
     "static/media/night-clear.svg": "/realtime-weather-app/static/media/night-clear.71cf504772f48ba6bd5aab8ea47c37dc.svg",
     "main.2625b889.css.map": "/realtime-weather-app/static/css/main.2625b889.css.map",
-    "main.8909cca7.js.map": "/realtime-weather-app/static/js/main.8909cca7.js.map",
+    "main.52f19951.js.map": "/realtime-weather-app/static/js/main.52f19951.js.map",
     "988.acb92799.chunk.js.map": "/realtime-weather-app/static/js/988.acb92799.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2625b889.css",
-    "static/js/main.8909cca7.js"
+    "static/js/main.52f19951.js"
   ]
 }
