@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "sw-precache-webpack-plugin": "^1.0.0"
   }
 }
